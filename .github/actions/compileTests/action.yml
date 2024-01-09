@@ -1,0 +1,20 @@
+name: Forta Unit test 
+description: "Runs unit test of challenge one"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: "16"
+    
+    - name: Install forta bot dependencies
+      working-directory: ./Forta-Bots-Challenges/Forta-Bots-Challenge-1
+      shell: bash
+      run: npm install
+    
+    - name: Run test
+      working-directory: ./Forta-Bots-Challenges/Forta-Bots-Challenge-1
+      shell: bash
+      run: npm run test
